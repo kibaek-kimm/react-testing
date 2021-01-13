@@ -30,3 +30,6 @@
 ## 유의사항
 * 테스트 코드는 유지보수가 쉬워야한다.
 * 효율적으로 파악할수 있도록 실패케이스를 잘 구성해야한다.
+
+## Study history
+* test를 위한 attrbute를 production에서 제거하는 방법은 `babel-plugin-react-remove-properties` 바벨 플러그인을 사용하면 된다.

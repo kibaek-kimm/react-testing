@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './click-counter/App';
+import App from './chapter1/click-counter/App';
 
 ReactDOM.render(
   <React.StrictMode>
