@@ -33,3 +33,6 @@
 
 ## Study history
 * test를 위한 attrbute를 production에서 제거하는 방법은 `babel-plugin-react-remove-properties` 바벨 플러그인을 사용하면 된다.
+
+## Reference
+Enzyme docs https://enzymejs.github.io/enzyme/docs/api/

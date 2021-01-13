@@ -49,5 +49,3 @@ test("renders without error", () => {
   expect(appComponent.length).toBe(1);
 });
 ```
-
-참고링크: https://enzymejs.github.io/enzyme/docs/api/
