@@ -34,9 +34,20 @@ test("renders counter display", () => {
 });
 
 test("counter starts at 0", () => {
-
+  const wrapper = setup();
+  const count = findByTestAttr(wrapper, "count").text();
+  expect(count).toBe("0");
 });
 
 test("clicking on button increatements counter display", () => {
+  // find the button
+  const wrapper = setup();
 
+  // click the button
+  const button = findByTestAttr(wrapper, "increment-button")
+  button.simulate('click');
+
+  // find the display, and test that the number has been incremented.
+  const count = findByTestAttr(wrapper, "count").text();
+  expect(count).toBe("1");
 })
