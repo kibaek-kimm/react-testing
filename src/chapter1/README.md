@@ -49,3 +49,51 @@ test("renders without error", () => {
   expect(appComponent.length).toBe(1);
 });
 ```
+
+## Challenge
+* 복붙은 자제하고 직접 타이핑하기
+* 직접 코드를 작성하기 전 테스트 플래닝부터 하기
+### 1. Decrement Button
+* "Decrement Counter" 버튼 생성하기
+* 클릭하면 counter가 감소됨
+
+### 2. No count below zero
+* 0 이하로는 내려갈 수 없음
+* 0일때 클릭한다면 에러메세지 노출 "the counter can't go below zero"
+* Increment Button을 클릭하면 에러는 사라짐
+
+## 겪은 문제
+* count값을 가져올때 일반 변수처럼 위에 선언했다.
+* 테스트코드는 순차적으로 실행되기 때문에 정확한 시점에 정의해야한다.
+
+<as-is>
+
+```javascript
+const wrapper = setup();
+const IncrementButton = findByTestAttr(wrapper, "increment-button");
+const DecrementButton = findByTestAttr(wrapper, "decrement-button");
+const count = findByTestAttr(wrapper, "count").text();
+
+IncrementButton.simulate("click");
+IncrementButton.simulate("click");
+DecrementButton.simulate("click");
+
+
+expect(count).toBe("1")
+```
+
+<to-be>
+
+```javascript
+const wrapper = setup();
+const IncrementButton = findByTestAttr(wrapper, "increment-button");
+const DecrementButton = findByTestAttr(wrapper, "decrement-button");
+
+IncrementButton.simulate("click");
+IncrementButton.simulate("click");
+DecrementButton.simulate("click");
+
+const count = findByTestAttr(wrapper, "count").text();
+
+expect(count).toBe("1")
+```
