@@ -4,7 +4,7 @@
  * @returns 
  */
 const Contrats = ({ success }) => {
-  return <div />
+  return <div data-test="component-congrats"/>
 }
 
 export default Contrats;
