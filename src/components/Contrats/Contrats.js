@@ -4,6 +4,14 @@
  * @returns 
  */
 const Contrats = ({ success }) => {
+  if (success) {
+    return <div data-test="component-congrats">
+      <span data-test="congrats-message">
+        Contratsulations! You guessed the word!
+      </span>
+  </div>
+  }
+
   return <div data-test="component-congrats"/>
 }
 
