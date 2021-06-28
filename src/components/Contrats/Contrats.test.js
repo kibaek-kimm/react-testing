@@ -1,9 +1,6 @@
-import Enzyme, { shallow } from "enzyme";
-import EnzymeAdapter from "@wojtekmaj/enzyme-adapter-react-17"
+import { shallow } from "enzyme";
 import Contrats from "./Contrats"
 import {findByTestAttr} from "../../../test/testUtils"
-
-Enzyme.configure({ adapter: new EnzymeAdapter() });
 
 const ATTR_WRAPPER = "component-congrats";
 
