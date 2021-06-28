@@ -24,3 +24,17 @@ Jotto (또는 Giotto)는 두 명의 플레이어, 필기구 및 알파벳이 적
 
 ## setupTests.js
 테스트 실행 전 테스트환경을 세팅할 수 있도록 호출하는 파일. 
+
+## 쉬었다 가기
+### 현재까지 느낀점
+#### 보다 효일적인 코딩이 가능(Coding more effciently)
+- 테스트코드를 작성하기 위해 작업하기 전에 먼저 계획을 짜게 된다. (planning ahead of time)
+- 삽질하는시간 감소 (fewer false starts)
+
+#### 수동으로 하던 테스트가 없어짐
+- 자동으로 테스트가 동작하니 사이드 이펙트 감소(회귀테스트)
+
+#### 코드가 좋아짐
+- 체계적으로 코드작성 가능(Well planned)
+- 유지보수가 쉬워짐(Easier to maintain)
+- 버그가 감소함(Fewer bugs)
