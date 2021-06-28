@@ -1,9 +1,13 @@
+interface IContrats {
+  success: boolean;
+}
+
 /**
  * Receive the success state as a props
- * @param {*} param0 
+ * @param param0 
  * @returns 
  */
-const Contrats = ({ success }) => {
+const Contrats: React.FC<IContrats> = ({ success }) => {
   if (success) {
     return <div data-test="component-congrats">
       <span data-test="congrats-message">

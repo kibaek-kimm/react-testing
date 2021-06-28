@@ -4,7 +4,9 @@ import {findByTestAttr} from "../../../test/testUtils"
 
 const ATTR_WRAPPER = "component-congrats";
 
-const setup = (props = {}) => {
+const defaultProps = { success: false };
+
+const setup = (props = defaultProps) => {
   return shallow(<Contrats {...props} />)
 }
 
