@@ -1,9 +1,6 @@
-import React from "react"
 import App from "./App"
-import Enzyme, { shallow } from "enzyme"
-import EnzymeAdapter from "enzyme-adapter-react-16"
-
-Enzyme.configure({ adapter: new EnzymeAdapter() })
+import { shallow } from "enzyme"
+import { findByTestAttr } from "../../../test/testUtils"
 
 /**
  * Factory function to create a ShallowWrapper for the App component.
@@ -12,8 +9,6 @@ Enzyme.configure({ adapter: new EnzymeAdapter() })
  * @returns {ShallowWrapper}
  */
  const setup = () => shallow(<App />)
-
- const findByTestAttr = (wrapper, value) => wrapper.find(`[data-test='${value}']`)
 
  test("render App", () => {
   const wrapper = setup();
