@@ -1,38 +1,40 @@
-# _React Testing with Jest and Enzyme_ from Udemy
+# Jotto App 만들기
 
-## Types of Tests
-### Unit tests
-* 가장 작은 단위의 테스트이고 한개의 기능(or 컴포넌트)만을 테스트함
+## Jotto?
+Jotto (또는 Giotto)는 두 명의 플레이어, 필기구 및 알파벳이 적힌 종이 조각으로 진행되는 논리 지향 단어 게임입니다. 각 플레이어는 비밀 단어를 쓰고 다른 플레이어의 단어를 추측합니다.
+출저: 위키백과
 
-### Integration tests
-* unit test들을 통합하여 테스트하는 방식
+## Scenario
+* 랜덤한 단어를 api를 통해 조회 (https://random-word-api.herokuapp.com/word)
+* 단어를 검색하기 위한 input과 button
+* 검색한 단어의 히스토리
+** 단어 - 매칭된 단어의 개수
+* 20회 안에 맞추지 못하면 실패 문구 노출
+* 20회 안에 맞췄다면 성공 문구 노출
 
-### Acceptance / End-to-end(E2E) Tests
-* 실제 유저가 동작하는 시나리오를 구성하여 테스트함
-* 셀레니움과 같은 가상 브라우저에서 동작된다.
+## Components
+### Input
+* 단어를 입력하는 폼.
 
-## Counter앱을 예시로 behavior, implementation testing 설명
-### behavior tests
-1. state 초기화(0)
-2. button 클릭 구현
-3. **증가된 1값이 렌터링 되었는지 확인**
+### GuessedWords
+* 추측한 단어들의 정보를 테이플 형태로 노출한다.
 
-### implementation tests
-1. state 초기화(0)
-2. button 클릭 구현
-3. **`increment()`가 호출 되었는지 확인**
+### Contrats 컴포넌트
+* success 여부에 따라 결과를 노출한다.
 
-### behavior, not implementation
-* 테스트코드가 실제코드 이름에 의존성이 생겨 테스트가 깨질수 있고 유지보수가 어려워짐
-* 하지만 절대적으로 `implementation`를 사용하지 않는것이 아니라 두 방식의 밸런스가 중요함
-* Art, not Science
+## setupTests.js
+테스트 실행 전 테스트환경을 세팅할 수 있도록 호출하는 파일. 
 
-## 유의사항
-* 테스트 코드는 유지보수가 쉬워야한다.
-* 효율적으로 파악할수 있도록 실패케이스를 잘 구성해야한다.
+## 쉬었다 가기
+### 현재까지 느낀점
+#### 보다 효일적인 코딩이 가능(Coding more effciently)
+- 테스트코드를 작성하기 위해 작업하기 전에 먼저 계획을 짜게 된다. (planning ahead of time)
+- 삽질하는시간 감소 (fewer false starts)
 
-## Study history
-* test를 위한 attrbute를 production에서 제거하는 방법은 `babel-plugin-react-remove-properties` 바벨 플러그인을 사용하면 된다.
+#### 수동으로 하던 테스트가 없어짐
+- 자동으로 테스트가 동작하니 사이드 이펙트 감소(회귀테스트)
 
-## Reference
-Enzyme docs https://enzymejs.github.io/enzyme/docs/api/
+#### 코드가 좋아짐
+- 체계적으로 코드작성 가능(Well planned)
+- 유지보수가 쉬워짐(Easier to maintain)
+- 버그가 감소함(Fewer bugs)
