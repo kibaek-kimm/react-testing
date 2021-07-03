@@ -19,7 +19,7 @@ code {
 
 #root .MuiListItem-button {
   position: relative;
-  background: #ddd;
+  background: #eee;
   border-radius: 4px;
   padding-right: 60px;
 }
@@ -44,4 +44,33 @@ code {
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
+}
+
+#root .mdc-data-table__table-container {
+  width: 400px; 
+  margin: 30px auto 0;
+}
+
+#root .mdc-data-table__table th,
+#root .mdc-data-table__table td {
+  font-size: 1.2rem;
+}
+
+#root .mdc-data-table__table th {
+  font-weight: bold;
+  background: #eee;
+}
+
+#root .mdc-data-table__table td:first-child {
+  font-weight: bold;
+}
+
+.alert.alert-success {
+  padding: 13px 24px;
+  background: #8ae68a;
+  color: #167300;
+  width: 480px;
+  margin: 0 auto;
+  border-radius: 4px;
+  text-align: left;
 }

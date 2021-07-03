@@ -1,3 +1,5 @@
+import { Typography } from "@material-ui/core";
+
 interface IContrats {
   success: boolean;
 }
@@ -9,9 +11,9 @@ interface IContrats {
  */
 const Contrats: React.FC<IContrats> = ({ success }) => {
   if (success) {
-    return <div data-test="component-congrats">
+    return <div data-test="component-congrats" className="alert alert-success">
       <span data-test="congrats-message">
-        Contratsulations! You guessed the word!
+        <Typography variant="h5">Contratsulations! You guessed the word!</Typography>
       </span>
   </div>
   }
