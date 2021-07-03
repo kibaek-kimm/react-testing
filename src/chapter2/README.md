@@ -14,14 +14,14 @@
 * 20회 안에 맞췄다면 성공 문구 노출
 
 ## Components
-### Input
-* 단어를 입력하는 폼.
+### Contrats 컴포넌트
+* success 여부에 따라 축하 메세지를 노출한다.
 
 ### GuessedWords
 * 추측한 단어들의 정보를 테이플 형태로 노출한다.
 
-### Contrats 컴포넌트
-* success 여부에 따라 결과를 노출한다.
+### Input
+* 단어를 입력하는 폼.
 
 ## setupTests.js
 테스트 실행 전 테스트환경을 세팅할 수 있도록 호출하는 파일. 
