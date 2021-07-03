@@ -16,7 +16,7 @@ import {
 } from "@material-ui/core";
 
 import AppChapter1 from "../src/chapter1/chanllenge/App"
-// import AppChapter2 from "../src/chapter2/"
+import AppChapter2 from "../src/chapter2/App"
 
 const options = [
   {
@@ -115,7 +115,7 @@ export default function MainApp() {
               <AppChapter1 />
             </Route>
             <Route path="/chapter2">
-            <div>2222</div>
+              <AppChapter2 />
             </Route>
             <Route path="/">
             <div>main</div>
