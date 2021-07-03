@@ -1,6 +1,6 @@
 import { shallow } from "enzyme";
 import Contrats from "./Contrats"
-import {findByTestAttr} from "../../../test/testUtils"
+import { findByTestAttr } from "../../../test/testUtils"
 
 const ATTR_WRAPPER = "component-congrats";
 
