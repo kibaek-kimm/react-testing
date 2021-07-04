@@ -46,3 +46,10 @@
 - `describe`내에 정의 된 모든`test`함수가 실행되기 전에 실행되는 함수이다.
 - 공통적인 셋업을 하는 로직이 있을때 사용된다.
 
+
+## Mocks
+* 실제 코드를 실핼하지 않도록 동일한 입력과 출력의 임의코드
+* 테스트에 Mock을 사용하는 이유는
+  * 테스트 실행 시 불필요한 network call을 방지하고 side-effect를 미연에 방지할 수 있다. (Prevent side-effect like networek calls)
+  * 함수를 실행하는 시점을 명확하게 알수있다. (Spy on function to see when it's called)
+  * 값을 반환하므로 테스트를 명확하게 할 수 있다.
