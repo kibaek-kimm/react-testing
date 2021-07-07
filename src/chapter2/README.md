@@ -53,3 +53,46 @@
   * 테스트 실행 시 불필요한 network call을 방지하고 side-effect를 미연에 방지할 수 있다. (Prevent side-effect like networek calls)
   * 함수를 실행하는 시점을 명확하게 알수있다. (Spy on function to see when it's called)
   * 값을 반환하므로 테스트를 명확하게 할 수 있다.
+
+### jest.fn
+* Jest객체의 `fn`함수를 이용하여 mock 함수를 구현한다.
+* 테스트에서 내부의 로직보다는 반환값이 중요하기 때문에 완전히 배제하고 결과값만을 반환한다.
+* 예제에서는 React의 useState, ChangeEvent객체를 mock으로 구현한다.
+* 아래는 React.useState를 mocking하여 input변경시 onChange이벤트를 통해 정상적으로 state에 변경이 되는지에 대한 테스트이다.
+```javascript
+test("useState", () => {
+  const mockSetCurrnetGuess = jest.fn()
+  React.useState = jest.fn(() => ["", mockSetCurrnetGuess]);
+
+  const wrapper = setup();
+  const inputBox = findByTestAttr(wrapper, "input-box");
+
+  const mockEvent = { target: { value: "train"} };
+  inputBox.simulate("change", mockEvent);
+
+  expect(mockSetCurrnetGuess).toHaveBeenCalledWith("train");
+})
+```
+
+### jest.mock
+* 만일 실제 코드에서 React.useState가 아니라 구조분해할당을 통해 useState만 사용한다면 mock이 정상적으로 되지않아 에러가 발생한다.
+* `jest.mock`메소드를 이용해 `React.useState`가 아니라 react 실제 모듈에 mock을 적용할 수 있다.
+
+```javascript
+// Override useState
+const mockSetCurrnetGuess = jest.fn()
+jest.mock("react", () => ({
+  ...jest.requireActual("react"),
+  useState: (initialState) => [initialState, mockSetCurrnetGuess]
+}))
+
+test("useState", () => {
+  const wrapper = setup();
+  const inputBox = findByTestAttr(wrapper, "input-box");
+
+  const mockEvent = { target: { value: "train"} };
+  inputBox.simulate("change", mockEvent);
+
+  expect(mockSetCurrnetGuess).toHaveBeenCalledWith("train");
+})
+```

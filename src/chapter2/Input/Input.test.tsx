@@ -3,6 +3,12 @@ import { shallow } from "enzyme";
 import Input from "./Input"
 import { findByTestAttr } from "../../../test/testUtils"
 
+const mockSetCurrnetGuess = jest.fn()
+jest.mock("react", () => ({
+  ...jest.requireActual<React>("react"),
+  useState: (initialState: any) => [initialState, mockSetCurrnetGuess]
+}))
+
 const DEFAULT_PROPS = {};
 const setup = (props = DEFAULT_PROPS) => shallow(<Input {...props} />)
 
@@ -21,9 +27,6 @@ describe("Input component", () => {
 
 describe("state controlled input field", () => {
   test("state update with value of input box upon change", () => {
-    const mockSetCurrnetGuess = jest.fn()
-    React.useState = jest.fn(() => ["", mockSetCurrnetGuess]);
-
     const wrapper = setup();
     const inputBox = findByTestAttr(wrapper, "input-box");
 
