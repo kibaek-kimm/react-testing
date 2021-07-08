@@ -21,6 +21,12 @@ const Input: React.FC<IProps> = (props) => {
           <Button 
             variant="contained"
             data-test="submit-button"
+            onClick={(e) => {
+              // TODO: Update guessWords global state
+              // TODO: Check against secretWord and optionally update success global state
+              e.preventDefault()
+              setCurrentGuess("")
+            }}
           >
             Submit 
           </Button>

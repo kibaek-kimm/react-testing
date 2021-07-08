@@ -44,7 +44,11 @@
 
 ## beforeEach
 - `describe`내에 정의 된 모든`test`함수가 실행되기 전에 실행되는 함수이다.
-- 공통적인 셋업을 하는 로직이 있을때 사용된다.
+- 매 테스트마다 반복적으로 사용되는 코드들을 구현할때 유용하다.
+
+## afterEach
+- 이름 그대로 beforeEach의 반대함수
+- 다음 테스트를 위해 앞 테스트에서 mocking한 변수들을 다시 초기화할때 유용하다.
 
 
 ## Mocks
@@ -96,3 +100,14 @@ test("useState", () => {
   expect(mockSetCurrnetGuess).toHaveBeenCalledWith("train");
 })
 ```
+
+## Quiz - Clearing State
+* setCurrentGuess state setter 함수호출 테스트 (Write tests that setCurrentGuess gets called)
+  * 버튼을 클릭하면 state가 초기화됨 (with an empty string when submtit button is clicked)
+* 앞서 작성한 테스트와 유사함(Simliar to what we did with setCurrentGuess with input box earlier)
+* "state controlled input field" describe에 test 구현(Include this tests in the "state controlled input field" describe)
+* 테스트코드 작성 후 실제코드 작성(After writing the tests, write code to make the tests pass)
+  * button의 onClick속성 활용(onClick attribute function for submit button)
+* Write TODO comments
+  * Update `guessWords` global state
+  * Check against secretWord and optionally update `success` global state
