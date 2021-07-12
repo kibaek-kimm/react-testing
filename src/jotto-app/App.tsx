@@ -4,7 +4,7 @@ import Input from "./Input"
 
 export default function JottoApp() {
   return (
-    <div className="App">
+    <div className="App" data-test="component-app">
       <Input />
       <Contrats success={true}/>
       <GuessedWords guessedWords={[{ guessedWord: "train", letterMatchCount: 3 },
