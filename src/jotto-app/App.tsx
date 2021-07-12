@@ -2,7 +2,7 @@ import Contrats from "./Contrats";
 import GuessedWords from "./GuessedWords";
 import Input from "./Input"
 
-export default function AppChapter2() {
+export default function JottoApp() {
   return (
     <div className="App">
       <Input />

@@ -15,20 +15,20 @@ import {
   ListItemText,
 } from "@material-ui/core";
 
-import AppChapter1 from "../src/chapter1/chanllenge/App"
-import AppChapter2 from "../src/chapter2/App"
+import ClickCounterApp from "./click-counter/chanllenge/App"
+import JottoApp from "./jotto-app/App"
 
 const options = [
   {
     text: 'Select Chapter',
   },
   {
-    text: 'Chapter1 - Counter',
-    link: "/chapter1"
+    text: 'Click Counter',
+    link: "/click-counter"
   },
   {
-    text: 'Chapter2 - Jotto App',
-    link: "/chapter2"
+    text: 'Jotto App',
+    link: "/jotto-app"
   }
 ];
 
@@ -111,11 +111,11 @@ export default function MainApp() {
             </Box>
           )}
           <Switch>
-            <Route path="/chapter1">
-              <AppChapter1 />
+            <Route path="/click-counter">
+              <ClickCounterApp />
             </Route>
-            <Route path="/chapter2">
-              <AppChapter2 />
+            <Route path="/jotto-app">
+              <JottoApp />
             </Route>
             <Route path="/">
             <div>main</div>

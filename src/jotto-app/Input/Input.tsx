@@ -2,8 +2,8 @@ import { Box, Button, Input as MUIInput } from "@material-ui/core";
 import React, { useState } from "react"
 
 interface IProps {
-  success: boolean;
-  secretWord: string;
+  success?: boolean;
+  secretWord?: string;
 }
 
 const Input: React.FC<IProps> = ({ success }) => {
