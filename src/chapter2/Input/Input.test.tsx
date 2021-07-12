@@ -12,6 +12,52 @@ jest.mock("react", () => ({
 const DEFAULT_PROPS = {};
 const setup = (props = DEFAULT_PROPS) => shallow(<Input {...props} />)
 
+describe("render", () => {
+  describe("success is true", () => {
+    let wrapper: any;
+    beforeEach(() => {
+      wrapper = setup({ success: true });
+    });
+
+    test("Input renders without error", () => {
+      const inputComponent = findByTestAttr(wrapper, "component-input")
+      expect(inputComponent.length).toBe(1);
+    })
+
+    test("input box does not show", () => {
+      const inputBox = findByTestAttr(wrapper, "input-box")
+      expect(inputBox.exists()).toBe(false);
+    })
+
+    test("submit button does not show", () => {
+      const submitButton = findByTestAttr(wrapper, "submit-button")
+      expect(submitButton.exists()).toBe(false)
+    })
+  })
+
+  describe("success is false", () => {
+    let wrapper: any;
+    beforeEach(() => {
+      wrapper = setup({ success: false });
+    });
+
+    test("Input renders without error", () => {
+      const inputComponent = findByTestAttr(wrapper, "component-input")
+      expect(inputComponent.length).toBe(1);
+    })
+
+    test("input box does not show", () => {
+      const inputBox = findByTestAttr(wrapper, "input-box")
+      expect(inputBox.exists()).toBe(true);
+    })
+
+    test("submit button does not show", () => {
+      const submitButton = findByTestAttr(wrapper, "submit-button")
+      expect(submitButton.exists()).toBe(true)
+    })
+  })
+})
+
 describe("Input component", () => {
   let wrapper: any;
 

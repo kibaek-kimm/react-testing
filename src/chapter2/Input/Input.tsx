@@ -2,11 +2,15 @@ import { Box, Button, Input as MUIInput } from "@material-ui/core";
 import React, { useState } from "react"
 
 interface IProps {
+  success: boolean;
   secretWord: string;
 }
 
-const Input: React.FC<IProps> = (props) => {
+const Input: React.FC<IProps> = ({ success }) => {
   const [currentGuess, setCurrentGuess] = useState("");
+  if (success) {
+    return <div data-test="component-input" style={{ marginBottom: "24px" }} />
+  }
   return <div data-test="component-input" style={{ marginBottom: "24px" }}>
     <form>
       <Box display="flex" justifyContent="center" mb={4}>
