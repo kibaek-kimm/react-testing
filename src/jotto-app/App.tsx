@@ -7,9 +7,13 @@ export default function JottoApp() {
     <div className="App" data-test="component-app">
       <Input />
       <Contrats success={true}/>
-      <GuessedWords guessedWords={[{ guessedWord: "train", letterMatchCount: 3 },
-    { guessedWord: "agile", letterMatchCount: 1 },
-    { guessedWord: "party", letterMatchCount: 5 }]} />
+      <GuessedWords 
+        guessedWords={[
+          { guessedWord: "train", letterMatchCount: 3 },
+          { guessedWord: "agile", letterMatchCount: 1 },
+          { guessedWord: "party", letterMatchCount: 5 }
+        ]} 
+      />
     </div>
   )
 }
